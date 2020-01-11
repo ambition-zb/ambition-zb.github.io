@@ -5,9 +5,9 @@
   <subtitle>要么写一些值得读的东西，要么做一些值得写的东西</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://amb-zb.gitee.io/blog/"/>
+  <link href="https://ambition-zb.github.io/"/>
   <updated>2020-01-06T08:58:54.000Z</updated>
-  <id>https://amb-zb.gitee.io/blog/</id>
+  <id>https://ambition-zb.github.io/</id>
   
   <author>
     <name>ambition</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>mfc双缓冲绘图</title>
-    <link href="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/"/>
-    <id>https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/</id>
+    <link href="https://ambition-zb.github.io/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/"/>
+    <id>https://ambition-zb.github.io/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/</id>
     <published>2020-01-06T08:58:54.000Z</published>
     <updated>2020-01-06T08:58:54.000Z</updated>
     
@@ -32,19 +32,19 @@
     </summary>
     
     
-      <category term="mfc" scheme="https://amb-zb.gitee.io/blog/categories/mfc/"/>
+      <category term="mfc" scheme="https://ambition-zb.github.io/categories/mfc/"/>
     
     
-      <category term="双缓冲" scheme="https://amb-zb.gitee.io/blog/tags/%E5%8F%8C%E7%BC%93%E5%86%B2/"/>
+      <category term="双缓冲" scheme="https://ambition-zb.github.io/tags/%E5%8F%8C%E7%BC%93%E5%86%B2/"/>
     
-      <category term="绘图" scheme="https://amb-zb.gitee.io/blog/tags/%E7%BB%98%E5%9B%BE/"/>
+      <category term="绘图" scheme="https://ambition-zb.github.io/tags/%E7%BB%98%E5%9B%BE/"/>
     
   </entry>
   
   <entry>
     <title>mfc实现复制粘贴</title>
-    <link href="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/"/>
-    <id>https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/</id>
+    <link href="https://ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/"/>
+    <id>https://ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/</id>
     <published>2020-01-06T05:23:08.000Z</published>
     <updated>2020-01-06T05:23:08.000Z</updated>
     
@@ -60,19 +60,19 @@
     </summary>
     
     
-      <category term="mfc" scheme="https://amb-zb.gitee.io/blog/categories/mfc/"/>
+      <category term="mfc" scheme="https://ambition-zb.github.io/categories/mfc/"/>
     
     
-      <category term="复制" scheme="https://amb-zb.gitee.io/blog/tags/%E5%A4%8D%E5%88%B6/"/>
+      <category term="复制" scheme="https://ambition-zb.github.io/tags/%E5%A4%8D%E5%88%B6/"/>
     
-      <category term="粘贴" scheme="https://amb-zb.gitee.io/blog/tags/%E7%B2%98%E8%B4%B4/"/>
+      <category term="粘贴" scheme="https://ambition-zb.github.io/tags/%E7%B2%98%E8%B4%B4/"/>
     
   </entry>
   
   <entry>
     <title>mfc获取Ctrl、Shift状态</title>
-    <link href="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81/"/>
-    <id>https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81/</id>
+    <link href="https://ambition-zb.github.io/2020/01/06/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81/"/>
+    <id>https://ambition-zb.github.io/2020/01/06/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81/</id>
     <published>2020-01-06T02:23:09.000Z</published>
     <updated>2020-01-06T02:23:09.000Z</updated>
     
@@ -85,19 +85,19 @@
     </summary>
     
     
-      <category term="mfc" scheme="https://amb-zb.gitee.io/blog/categories/mfc/"/>
+      <category term="mfc" scheme="https://ambition-zb.github.io/categories/mfc/"/>
     
     
-      <category term="shift" scheme="https://amb-zb.gitee.io/blog/tags/shift/"/>
+      <category term="shift" scheme="https://ambition-zb.github.io/tags/shift/"/>
     
-      <category term="ctrl" scheme="https://amb-zb.gitee.io/blog/tags/ctrl/"/>
+      <category term="ctrl" scheme="https://ambition-zb.github.io/tags/ctrl/"/>
     
   </entry>
   
   <entry>
     <title>mfc获取鼠标所在窗口</title>
-    <link href="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/"/>
-    <id>https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/</id>
+    <link href="https://ambition-zb.github.io/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/"/>
+    <id>https://ambition-zb.github.io/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/</id>
     <published>2020-01-06T01:53:39.000Z</published>
     <updated>2020-01-06T01:53:39.000Z</updated>
     
@@ -111,10 +111,10 @@
     </summary>
     
     
-      <category term="mfc" scheme="https://amb-zb.gitee.io/blog/categories/mfc/"/>
+      <category term="mfc" scheme="https://ambition-zb.github.io/categories/mfc/"/>
     
     
-      <category term="鼠标" scheme="https://amb-zb.gitee.io/blog/tags/%E9%BC%A0%E6%A0%87/"/>
+      <category term="鼠标" scheme="https://ambition-zb.github.io/tags/%E9%BC%A0%E6%A0%87/"/>
     
   </entry>
   
