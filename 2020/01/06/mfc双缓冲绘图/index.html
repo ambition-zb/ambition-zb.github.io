@@ -90,7 +90,7 @@
 
 
 
-  <meta name="keywords" content="鼠标," />
+  <meta name="keywords" content="双缓冲,绘图," />
 
 
 
@@ -105,17 +105,20 @@
 
 
 
-<meta name="description" content="首先需要获取到鼠标点，再根据鼠标点获取到鼠标所在的窗口即可 12345CPoint ptMouse;&#x2F;&#x2F;获取鼠标点GetCursorPos(&amp;ptMouse);&#x2F;&#x2F;根据鼠标点获取所在窗口CWnd * pWnd &#x3D; WindowFromPoint(ptMouse);">
+<meta name="description" content="双缓冲绘图的做用就是为了消除窗口重绘的时候的闪烁问题，使窗口重绘变得流畅，达到肉眼看不出来的效果使用双缓冲绘图的前提条件就是必须有窗口，mfc中常用的有CWnd、CDialog以及文档视图，对吧？我们以最简单的CWnd为例子，讲解双缓冲绘图的过程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mfc获取鼠标所在窗口">
-<meta property="og:url" content="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/index.html">
+<meta property="og:title" content="mfc双缓冲绘图">
+<meta property="og:url" content="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/index.html">
 <meta property="og:site_name" content="ambition&#96;s blog">
-<meta property="og:description" content="首先需要获取到鼠标点，再根据鼠标点获取到鼠标所在的窗口即可 12345CPoint ptMouse;&#x2F;&#x2F;获取鼠标点GetCursorPos(&amp;ptMouse);&#x2F;&#x2F;根据鼠标点获取所在窗口CWnd * pWnd &#x3D; WindowFromPoint(ptMouse);">
-<meta property="article:published_time" content="2020-01-06T01:53:39.000Z">
-<meta property="article:modified_time" content="2020-01-06T01:53:39.000Z">
+<meta property="og:description" content="双缓冲绘图的做用就是为了消除窗口重绘的时候的闪烁问题，使窗口重绘变得流畅，达到肉眼看不出来的效果使用双缓冲绘图的前提条件就是必须有窗口，mfc中常用的有CWnd、CDialog以及文档视图，对吧？我们以最简单的CWnd为例子，讲解双缓冲绘图的过程。">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcCZa8.png">
+<meta property="article:published_time" content="2020-01-06T08:58:54.000Z">
+<meta property="article:modified_time" content="2020-01-06T08:58:54.000Z">
 <meta property="article:author" content="ambition">
-<meta property="article:tag" content="鼠标">
+<meta property="article:tag" content="双缓冲">
+<meta property="article:tag" content="绘图">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcCZa8.png">
 
 
 
@@ -145,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://amb-zb.gitee.io/blog/2020/01/06/mfc获取鼠标所在窗口/"/>
+  <link rel="canonical" href="https://amb-zb.gitee.io/blog/2020/01/06/mfc双缓冲绘图/"/>
 
 
 
 
 
-  <title>mfc获取鼠标所在窗口 | ambition`s blog</title>
+  <title>mfc双缓冲绘图 | ambition`s blog</title>
   
 
 
@@ -299,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://amb-zb.gitee.io/blog/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/">
+    <link itemprop="mainEntityOfPage" href="https://amb-zb.gitee.io/blog/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ambition">
@@ -316,7 +319,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">mfc获取鼠标所在窗口</h2>
+          <h2 class="post-title" itemprop="name headline">mfc双缓冲绘图</h2>
         
 
         <div class="post-meta">
@@ -328,7 +331,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-06T09:53:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-06T16:58:54+08:00">
                 2020-01-06
               </time>
             
@@ -369,8 +372,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/" itemprop="commentCount"></span>
+                <a href="/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +381,7 @@
 
           
           
-             <span id="/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/" class="leancloud_visitors" data-flag-title="mfc获取鼠标所在窗口">
+             <span id="/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/" class="leancloud_visitors" data-flag-title="mfc双缓冲绘图">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  53
+                  940
                 </span>
               
 
@@ -419,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -440,9 +443,34 @@
       
 
       
-        <p>首先需要获取到鼠标点，再根据鼠标点获取到鼠标所在的窗口即可</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CPoint ptMouse;</span><br><span class="line"><span class="comment">//获取鼠标点</span></span><br><span class="line"><span class="constructor">GetCursorPos(&amp;<span class="params">ptMouse</span>)</span>;</span><br><span class="line"><span class="comment">//根据鼠标点获取所在窗口</span></span><br><span class="line">CWnd<span class="operator"> * </span>pWnd = <span class="constructor">WindowFromPoint(<span class="params">ptMouse</span>)</span>;</span><br></pre></td></tr></table></figure>
+        <p>双缓冲绘图的做用就是为了消除窗口重绘的时候的闪烁问题，使窗口重绘变得流畅，达到肉眼看不出来的效果<br>使用双缓冲绘图的前提条件就是必须有窗口，mfc中常用的有CWnd、CDialog以及文档视图，对吧？<br>我们以最简单的CWnd为例子，讲解双缓冲绘图的过程。</p>
 <a id="more"></a>
+
+<p>首先讲解一下怎么实现双缓冲，所谓缓冲，当然就是需要在自己的画布上画图，然后把整个画布的数据给到应用程序，这样，应用程序得到的就是一个完整的数据，完整的数据自然<br>就没有问题，对吧，那么自己的画布哪来的呢？接着往下看就知道了</p>
+<p>1.创建一个自己的CWnd类，从CWnd派生<br><img src="https://s2.ax1x.com/2020/01/07/lcCZa8.png" alt="lcCZa8.png"></p>
+<p>在头文件中定义自己的画布，当然画图时，除了画布，还需要画笔对不对？</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CDC			    m_MemDC;<span class="comment">//画笔</span></span><br><span class="line">CBitmap			m_Bitmap;<span class="comment">//画布</span></span><br><span class="line">CRect			m_rtClient;<span class="comment">//区域</span></span><br></pre></td></tr></table></figure>
+<p>那么定义完了画笔和画布以及区域，还需要做哪些工作呢？首先考虑的是如果窗口大小发生了变化，那么画布是不是也需要跟着变呢？<br>要不然自己的这个画布不就和窗口大小不一样大了吗？<br>这一步需要重载几个虚函数，重载虚函数大家应该都会吧，在类向导中操作即可。不会的同学自己学哦，这一步不会，说明连新手都不是，应该出去跑10公里</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">afx_msg <span class="built_in">int</span>	        <span class="constructor">OnCreate(LPCREATESTRUCT <span class="params">lpCreateStruct</span>)</span>;<span class="comment">//窗口创建时调用</span></span><br><span class="line">afx_msg void	    <span class="constructor">OnSize(UINT <span class="params">nType</span>, <span class="params">int</span> <span class="params">cx</span>, <span class="params">int</span> <span class="params">cy</span>)</span>;<span class="comment">//窗口大小发生改变时调用</span></span><br><span class="line">afx_msg BOOL	    <span class="constructor">OnEraseBkgnd(CDC<span class="operator">*</span> <span class="params">pDC</span>)</span>;<span class="comment">//擦除背景时调用</span></span><br><span class="line">afx_msg void	    <span class="constructor">OnPaint()</span>;<span class="comment">//画图时调用</span></span><br></pre></td></tr></table></figure>
+<p>头文件的工作只有这么多，剩下的都是源文件的内容了。</p>
+<p>毫无疑问，源文件中的工作当然就是编写这几个函数的实现过程了：</p>
+<p>在窗口创建时获取窗口大小，创建画笔和画布：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> CMyWnd::<span class="constructor">OnCreate(LPCREATESTRUCT <span class="params">lpCreateStruct</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (CWnd::<span class="constructor">OnCreate(<span class="params">lpCreateStruct</span>)</span><span class="operator"> == </span>-<span class="number">1</span>)</span><br><span class="line">		return -<span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span>  Add your specialized creation code here</span></span><br><span class="line">	<span class="constructor">GetClientRect(&amp;<span class="params">m_rtClient</span>)</span>;</span><br><span class="line">	CClientDC dc(this);</span><br><span class="line">	m_MemDC.<span class="constructor">CreateCompatibleDC(&amp;<span class="params">dc</span>)</span>;</span><br><span class="line">	m_MemDC.<span class="constructor">SetStretchBltMode(HALFTONE)</span>;</span><br><span class="line">	m_Bitmap.<span class="constructor">CreateCompatibleBitmap(&amp;<span class="params">dc</span>,<span class="params">m_rtClient</span>.Width()</span>,m_rtClient.<span class="constructor">Height()</span>);</span><br><span class="line">	m_MemDC.<span class="constructor">SelectObject(&amp;<span class="params">m_Bitmap</span>)</span>;</span><br><span class="line"> </span><br><span class="line">	return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在窗口发生变化时，重新获取窗口大小，并且重置画布：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void CMyWnd::<span class="constructor">OnSize(UINT <span class="params">nType</span>, <span class="params">int</span> <span class="params">cx</span>, <span class="params">int</span> <span class="params">cy</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	CWnd::<span class="constructor">OnSize(<span class="params">nType</span>, <span class="params">cx</span>, <span class="params">cy</span>)</span>;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span> Add your message handler code here</span></span><br><span class="line">	<span class="constructor">GetClientRect(&amp;<span class="params">m_rtClient</span>)</span>;</span><br><span class="line">	CClientDC dc(this);</span><br><span class="line">	<span class="keyword">if</span>(m_MemDC.m_hDC)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(m_Bitmap.m_hObject)</span><br><span class="line">			m_Bitmap.<span class="constructor">DeleteObject()</span>;</span><br><span class="line">		m_Bitmap.<span class="constructor">CreateCompatibleBitmap(&amp;<span class="params">dc</span>,<span class="params">m_rtClient</span>.Width()</span>,m_rtClient.<span class="constructor">Height()</span>);</span><br><span class="line">		m_MemDC.<span class="constructor">SelectObject(&amp;<span class="params">m_Bitmap</span>)</span>;</span><br><span class="line">		<span class="constructor">Invalidate()</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到了这一步你是不是还不知道擦除背景的函数时干嘛的呢？其实mfc会在画图之前调用OnEraseBkgnd函数进行背景擦除，这样下次画出来的图像才是对的，如果不擦除，<br>在上一次画的图像上面再画，那画出来的谁知道是什么鬼。但是我们这里是用自己的画布画的，这个擦除就不需要了，直接返回TRUE即可。</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BOOL</span> CMyWnd::OnEraseBkgnd(CDC* pDC)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">TRUE</span>;</span><br><span class="line">	<span class="keyword">return</span> CWnd::OnEraseBkgnd(pDC);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后一步就是画图了（终于到了这一步），这一步最关键的有两点：</p>
+<ol>
+<li>画图时一定要用自己创建的画笔和画布画图，否则根本达不到双缓冲的效果。</li>
+<li>最后一定要将自己的画布数据给应用程序，就是下面的BitBlt函数的功能，要不你画啥，一点也看不见，对不对？<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CMyWnd::OnPaint()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="function">CPaintDC <span class="title">dc</span><span class="params">(<span class="keyword">this</span>)</span></span>; <span class="comment">// device context for painting</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">///</span></span><br><span class="line">	画具体的内容</span><br><span class="line">	<span class="comment">///</span></span><br><span class="line">	</span><br><span class="line">	dc.BitBlt(m_rtClient.left,</span><br><span class="line">				m_rtClient.top,</span><br><span class="line">				m_rtClient.Width(),</span><br><span class="line">				m_rtClient.Height(),</span><br><span class="line">				&amp;m_MemDC,</span><br><span class="line">				m_rtClient.left,</span><br><span class="line">				m_rtClient.top,</span><br><span class="line">				SRCCOPY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>好了，双缓冲绘图的内容只有这么多了，如果哪里不对，请给我留言，我一定改进！！！</p>
+
       
     </div>
     
@@ -501,7 +529,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/" title="mfc获取鼠标所在窗口">https://amb-zb.gitee.io/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3/</a>
+    <a href="https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/" title="mfc双缓冲绘图">https://amb-zb.gitee.io/blog/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -516,7 +544,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/%E9%BC%A0%E6%A0%87/" <i class="fa fa-tag"></i> 鼠标</a>
+            <a href="/blog/tags/%E5%8F%8C%E7%BC%93%E5%86%B2/" <i class="fa fa-tag"></i> 双缓冲</a>
+          
+            <a href="/blog/tags/%E7%BB%98%E5%9B%BE/" <i class="fa fa-tag"></i> 绘图</a>
           
         </div>
       
@@ -529,15 +559,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" rel="next" title="mfc实现复制粘贴">
+                <i class="fa fa-chevron-left"></i> mfc实现复制粘贴
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2020/01/06/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81/" rel="prev" title="mfc获取Ctrl、Shift状态">
-                mfc获取Ctrl、Shift状态 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
