@@ -1959,7 +1959,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9d85bd;
+  background: #ffa7b1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3273,4 +3273,10 @@ pre .javascript .function {
 }
 .posts-expand .post-tags {
   text-align: left;
+}
+.sidebar-inner {
+  border-radius: 10px;
+}
+.header-inner {
+  border-radius: 10px;
 }
