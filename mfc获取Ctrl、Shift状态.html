@@ -33,8 +33,8 @@
   
     
     
-  <script src="/ambition-zb.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/ambition-zb.github.io/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -62,7 +62,7 @@
 
   
   
-  <link href="/ambition-zb.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -70,27 +70,27 @@
 
 
 
-<link href="/ambition-zb.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/ambition-zb.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/ambition-zb.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/ambition-zb.github.io/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/ambition-zb.github.io/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/ambition-zb.github.io/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
-  <meta name="keywords" content="复制,粘贴," />
+
+
+  <meta name="keywords" content="shift,ctrl," />
 
 
 
@@ -98,24 +98,24 @@
   
 
 
-  <link rel="alternate" href="/ambition-zb.github.io/atom.xml" title="ambition`s blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="ambition`s blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="进行复制与粘贴，其实就是剪切板的使用，下面介绍具体的使用方法： 1. 复制 想要使用剪切板，必须进行注册，为剪切板起一个自己喜欢的名字（当然任何名字都可以，只要自己看着舒服即可，我这里使用的是 “Object_ClipBoard”）： 1static UINT g_cfObjectFormat &#x3D; ::RegisterClipboardFormat(_T(&quot;Object_ClipBoard&quot;));">
+<meta name="description" content="这个功能非常简单，只要就是用到一个函数GetKeyState，并且知道ctrl、shift的按键代码即可ctrl按键的代码为：VK_CONTROLshift按键的代码为：VK_SHIFT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mfc实现复制粘贴">
-<meta property="og:url" content="https://ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/index.html">
+<meta property="og:title" content="mfc获取Ctrl、Shift状态">
+<meta property="og:url" content="https://ambition-zh.top/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html">
 <meta property="og:site_name" content="ambition&#96;s blog">
-<meta property="og:description" content="进行复制与粘贴，其实就是剪切板的使用，下面介绍具体的使用方法： 1. 复制 想要使用剪切板，必须进行注册，为剪切板起一个自己喜欢的名字（当然任何名字都可以，只要自己看着舒服即可，我这里使用的是 “Object_ClipBoard”）： 1static UINT g_cfObjectFormat &#x3D; ::RegisterClipboardFormat(_T(&quot;Object_ClipBoard&quot;));">
-<meta property="article:published_time" content="2020-01-06T05:23:08.000Z">
-<meta property="article:modified_time" content="2020-01-06T05:23:08.000Z">
+<meta property="og:description" content="这个功能非常简单，只要就是用到一个函数GetKeyState，并且知道ctrl、shift的按键代码即可ctrl按键的代码为：VK_CONTROLshift按键的代码为：VK_SHIFT">
+<meta property="article:published_time" content="2020-01-06T02:23:09.000Z">
+<meta property="article:modified_time" content="2020-01-06T02:23:09.000Z">
 <meta property="article:author" content="ambition">
-<meta property="article:tag" content="复制">
-<meta property="article:tag" content="粘贴">
+<meta property="article:tag" content="shift">
+<meta property="article:tag" content="ctrl">
 <meta name="twitter:card" content="summary">
 
 
@@ -123,7 +123,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/ambition-zb.github.io/',
+    root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -146,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="https://ambition-zb.github.io/2020/01/06/mfc实现复制粘贴/"/>
+  <link rel="canonical" href="https://ambition-zh.top/mfc获取Ctrl、Shift状态.html"/>
 
 
 
 
 
-  <title>mfc实现复制粘贴 | ambition`s blog</title>
+  <title>mfc获取Ctrl、Shift状态 | ambition`s blog</title>
   
 
 
@@ -191,7 +191,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/ambition-zb.github.io/"  class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ambition`s blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -219,7 +219,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/ambition-zb.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -229,7 +229,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/ambition-zb.github.io/about/" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -239,7 +239,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/ambition-zb.github.io/tags/" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -249,7 +249,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/ambition-zb.github.io/categories/" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -259,7 +259,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/ambition-zb.github.io/archives/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -274,6 +274,9 @@
 
   
 </nav>
+
+
+  <meta name="keywords" content="shift,ctrl," />
 
 
 
@@ -300,12 +303,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ambition-zb.github.io/ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/">
+    <link itemprop="mainEntityOfPage" href="https://ambition-zh.top/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ambition">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/ambition-zb.github.io/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,7 +320,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">mfc实现复制粘贴</h2>
+          <h2 class="post-title" itemprop="name headline">mfc获取Ctrl、Shift状态</h2>
         
 
         <div class="post-meta">
@@ -329,7 +332,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-06T13:23:08+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-06T10:23:09+08:00">
                 2020-01-06
               </time>
             
@@ -352,7 +355,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/ambition-zb.github.io/categories/mfc/" itemprop="url" rel="index">
+                  <a href="/categories/mfc/" itemprop="url" rel="index">
                     <span itemprop="name">mfc</span>
                   </a>
                 </span>
@@ -370,8 +373,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" itemprop="commentCount"></span>
+                <a href="/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +382,7 @@
 
           
           
-             <span id="/ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" class="leancloud_visitors" data-flag-title="mfc实现复制粘贴">
+             <span id="/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html" class="leancloud_visitors" data-flag-title="mfc获取Ctrl、Shift状态">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  352
+                  69
                 </span>
               
 
@@ -441,25 +444,11 @@
       
 
       
-        <p>进行复制与粘贴，其实就是剪切板的使用，下面介绍具体的使用方法：</p>
-<h1 id="1-复制"><a href="#1-复制" class="headerlink" title="1. 复制"></a>1. 复制</h1><ol>
-<li><p>想要使用剪切板，必须进行注册，为剪切板起一个自己喜欢的名字（当然任何名字都可以，只要自己看着舒服即可，我这里使用的是 “Object_ClipBoard”）：</p>
-<figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">UINT</span> g_cfObjectFormat = ::RegisterClipboardFormat(_T(<span class="string">"Object_ClipBoard"</span>));</span><br></pre></td></tr></table></figure>
+        <p>这个功能非常简单，只要就是用到一个函数GetKeyState，并且知道ctrl、shift的按键代码即可<br>ctrl按键的代码为：VK_CONTROL<br>shift按键的代码为：VK_SHIFT</p>
 <a id="more"></a>
-</li>
-<li><p>想要复制，当然必须要有需要复制的数据，这里进行数据生成，我这里使用的是CSharedFile和CArchive的串行化产生数据的，当然也可以使用别的方式产生数据：</p>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CSharedFile	memFile;</span><br><span class="line">CArchive ar<span class="comment">(&amp;memFile, CArchive::store|CArchive::bNoFlushOnDelete)</span>;</span><br><span class="line"><span class="comment">//在这里用ar进行串行化数据。。。	</span></span><br><span class="line">ar&lt;&lt;<span class="number">5</span>;</span><br><span class="line">ar&lt;&lt;<span class="number">6</span>；</span><br><span class="line"><span class="comment">// 结束</span></span><br><span class="line">ar.Flush<span class="comment">()</span>;</span><br><span class="line">HGLOBAL hData = memFile.Detach<span class="comment">()</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将生成的数据保存到剪切板中：</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打开剪切板</span></span><br><span class="line"><span class="keyword">if</span>(<span class="constructor">OpenClipboard()</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//设置数据</span></span><br><span class="line">	::<span class="constructor">SetClipboardData(<span class="params">g_cfObjectFormat</span>, <span class="params">hData</span>)</span>;</span><br><span class="line">	<span class="comment">//关闭剪切板</span></span><br><span class="line">	<span class="constructor">CloseClipboard()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<h1 id="2-粘贴"><a href="#2-粘贴" class="headerlink" title="2.粘贴"></a>2.粘贴</h1><p>粘贴：当然就是把刚才的剪切板打开，在把数据拿出来，理论是不是很简单，不说了，直接上代码</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打开剪切板</span></span><br><span class="line"><span class="keyword">if</span>(<span class="constructor">OpenClipboard()</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//拿到剪切板数据</span></span><br><span class="line">    HANDLE hData = ::<span class="constructor">GetClipboardData(<span class="params">g_cfObjectFormat</span>)</span>;</span><br><span class="line">    <span class="keyword">if</span>(hData != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">		CSharedFile memFile;</span><br><span class="line">		memFile.<span class="constructor">SetHandle(<span class="params">hData</span>,FALSE)</span>;</span><br><span class="line">		CArchive ar(&amp;memFile, CArchive::load);</span><br><span class="line"> </span><br><span class="line">        在这里将数据串行化出来。。。</span><br><span class="line"> </span><br><span class="line">        ar.<span class="constructor">Close()</span>;</span><br><span class="line">		memFile.<span class="constructor">Detach()</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//清空剪切板</span></span><br><span class="line">        <span class="constructor">EmptyClipboard()</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//关闭剪切板</span></span><br><span class="line">    <span class="constructor">CloseClipboard()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>到这里mfc的复制粘贴功能就完成了，是不是一点都不难…</p>
-
+<p>则获取按键状态的代码为：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BOOL bCtrl = GetKeyState(<span class="name">VK_CONTROL</span>) &amp; <span class="number">0</span>x8000<span class="comment">;</span></span><br><span class="line">BOOL bShift = (<span class="name">GetKeyState</span>(<span class="name">VK_SHIFT</span>) &amp; <span class="number">0</span>x8000)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -518,7 +507,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" title="mfc实现复制粘贴">https://ambition-zb.github.io/2020/01/06/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/</a>
+    <a href="https://ambition-zh.top/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html" title="mfc获取Ctrl、Shift状态">https://ambition-zh.top/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -533,9 +522,9 @@
       
         <div class="post-tags">
           
-            <a href="/ambition-zb.github.io/tags/%E5%A4%8D%E5%88%B6/" <i class="fa fa-tag"></i> 复制</a>
+            <a href="/tags/shift/" <i class="fa fa-tag"></i> shift</a>
           
-            <a href="/ambition-zb.github.io/tags/%E7%B2%98%E8%B4%B4/" <i class="fa fa-tag"></i> 粘贴</a>
+            <a href="/tags/ctrl/" <i class="fa fa-tag"></i> ctrl</a>
           
         </div>
       
@@ -548,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ambition-zb.github.io/2020/01/06/mfc%E8%8E%B7%E5%8F%96Ctrl%E3%80%81Shift%E7%8A%B6%E6%80%81/" rel="next" title="mfc获取Ctrl、Shift状态">
-                <i class="fa fa-chevron-left"></i> mfc获取Ctrl、Shift状态
+              <a href="/mfc%E8%8E%B7%E5%8F%96%E9%BC%A0%E6%A0%87%E6%89%80%E5%9C%A8%E7%AA%97%E5%8F%A3.html" rel="next" title="mfc获取鼠标所在窗口">
+                <i class="fa fa-chevron-left"></i> mfc获取鼠标所在窗口
               </a>
             
           </div>
@@ -558,8 +547,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/ambition-zb.github.io/2020/01/06/mfc%E5%8F%8C%E7%BC%93%E5%86%B2%E7%BB%98%E5%9B%BE/" rel="prev" title="mfc双缓冲绘图">
-                mfc双缓冲绘图 <i class="fa fa-chevron-right"></i>
+              <a href="/mfc%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4.html" rel="prev" title="mfc实现复制粘贴">
+                mfc实现复制粘贴 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -615,22 +604,13 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/ambition-zb.github.io/images/avatar.png"
+                src="/images/avatar.png"
                 alt="ambition" />
             
               <p class="site-author-name" itemprop="name">ambition</p>
@@ -642,7 +622,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/ambition-zb.github.io/archives/%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
@@ -654,7 +634,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/ambition-zb.github.io/categories/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -665,7 +645,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/ambition-zb.github.io/tags/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -676,7 +656,7 @@
 
           
             <div class="feed-link motion-element">
-              <a href="/ambition-zb.github.io/atom.xml" rel="alternate">
+              <a href="/atom.xml" rel="alternate">
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
@@ -712,22 +692,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-复制"><span class="nav-text">1. 复制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-粘贴"><span class="nav-text">2.粘贴</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -834,69 +798,69 @@
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
   
-    <script type="text/javascript" src="/ambition-zb.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/ambition-zb.github.io/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/ambition-zb.github.io/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/ambition-zb.github.io/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/ambition-zb.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/ambition-zb.github.io/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/ambition-zb.github.io/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/ambition-zb.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
